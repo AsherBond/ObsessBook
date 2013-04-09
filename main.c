@@ -17,10 +17,13 @@ int main( argc, argv )
 
     userdb_show( OBook );
 
-    printf( "[%d]\n", DERPCON(
-        userdb_find_by_id( OBook, 2002 ),
-        userdb_find_by_id( OBook, 1010 )
-    ));
+    user u1;
+    user u2;
+
+    u1 = *( userdb_find_by_id( OBook, 2002 ) );
+    u2 = *( userdb_find_by_id( OBook, 1010 ) );
+
+    printf( "[%d]\n", DERPCON( u1, u2 ) );
 
     userdb_destroy( OBook );
 

@@ -6,10 +6,15 @@
 
 int const MAX_LIST = 1024;
 
-int DERPCON( a, b )
-    user * a;
-    user * b;
+int DERPCON( ua, ub )
+    user ua;
+    user ub;
 {
+
+    user *a, *b;
+
+    a = &ua;
+    b = &ub;
 
     user ** seen, ** current, ** later;
     int nseen = 0, ncurrent = 0, nlater = 0;
@@ -34,7 +39,7 @@ int DERPCON( a, b )
     while( ( ncurrent || nlater ) && distance < 7 ){
         if ( ncurrent ){
   //          printf( "Current: %s\n", current[ncurrent-1] -> name );
-            if ( current[ncurrent-1] == b ){
+            if ( current[ncurrent-1] -> user_ID == b -> user_ID ){
                 result = distance;
                 break;
             }

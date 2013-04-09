@@ -24,17 +24,14 @@ int DERPCON( ua, ub )
     later = malloc( sizeof( user * ) * MAX_LIST );
 
     int result = 0;
-    int distance = 1;
+    int distance = 0;
 
     int i,j;
 
 //    printf( "[%s]vs[%s]\n", a -> name, b -> name );
 
 //    printf("distance = %d\n", distance );
-    for ( i = 0; i < a -> number_of_BFFs; i ++ ){
-//        printf( "queued %s\n", a -> BFF_list[i] -> name );
-        current[ ncurrent++ ] = a -> BFF_list[i];
-    }
+    current[ ncurrent++ ] = a;
 
     while( ( ncurrent || nlater ) && distance < 7 ){
         if ( ncurrent ){

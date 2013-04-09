@@ -31,7 +31,7 @@ int DERPCON( a, b )
         current[ ncurrent++ ] = a -> BFF_list[i];
     }
 
-    while( (ncurrent+nlater)>0 && distance < 7 ){
+    while( ( ncurrent || nlater ) && distance < 7 ){
         if ( ncurrent ){
   //          printf( "Current: %s\n", current[ncurrent-1] -> name );
             if ( current[ncurrent-1] == b ){
@@ -60,9 +60,12 @@ int DERPCON( a, b )
         if ( nlater ){
             distance++;
 //            printf("increasing distance = %d\n", distance);
-            free( current );
+
+            user ** tmp;
+            tmp = current;
             current = later;
-            later = malloc( sizeof( user * ) * MAX_LIST );
+            later = tmp;
+
             ncurrent = nlater;
             nlater = 0;
         }

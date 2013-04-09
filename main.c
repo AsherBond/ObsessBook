@@ -31,6 +31,15 @@ int main( argc, argv )
     user u1;
     user u2;
 
+    if (
+        userdb_find_by_id( OBook, id1 ) == NULL
+        ||
+        userdb_find_by_id( OBook, id2 ) == NULL
+    ){
+        fprintf( stderr, "unable to find at least one of users: %d, %d\nbye\n", id1, id2 );
+        return 1;
+    }
+
     u1 = *( userdb_find_by_id( OBook, id1 ) );
     u2 = *( userdb_find_by_id( OBook, id2 ) );
 

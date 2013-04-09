@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "user.h"
 #include "userdb.h"
@@ -10,6 +11,16 @@ int main( argc, argv )
 {
     userdb * OBook;
 
+    if ( argc < 3 ){
+        fprintf( stderr, "usage: %s USERID1 USERID2\n", argv[0] );
+        return 1;
+    }
+
+    int id1, id2;
+
+    id1 = atoi( argv[1] );
+    id2 = atoi( argv[2] );
+
     FILE *f;
     f = fopen( "INPUT.TXT", "r" );
     OBook = userdb_load( f );
@@ -20,10 +31,10 @@ int main( argc, argv )
     user u1;
     user u2;
 
-    u1 = *( userdb_find_by_id( OBook, 2002 ) );
-    u2 = *( userdb_find_by_id( OBook, 1010 ) );
+    u1 = *( userdb_find_by_id( OBook, id1 ) );
+    u2 = *( userdb_find_by_id( OBook, id2 ) );
 
-    printf( "[%d]\n", DERPCON( u1, u2 ) );
+    printf( "DERPCON = %d\n", DERPCON( u1, u2 ) );
 
     userdb_destroy( OBook );
 

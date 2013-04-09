@@ -3,12 +3,15 @@ ObsessBook
 
 ObsessBook - The Underhanded C Contest 2013 Entry DRAFT
 
+website: http://underhanded.xcott.com/?page_id=5
+
 This is not a solution! This is only a working implementation that can be used as starting point or for testing your solution.
 
 Good luck!
 
 
 The MIT License (MIT)
+=====================
 Copyright (c) 2013 Mateusz Adamowski
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:

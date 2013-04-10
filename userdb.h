@@ -1,4 +1,5 @@
 #ifndef __USERDB_H__
+#define __USERDB_H__ 1
 
 typedef struct {
     unsigned int    usercount;

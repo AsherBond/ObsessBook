@@ -1,4 +1,5 @@
 #ifndef __USER_H__
+#define __USER_H__ 1
 
 typedef struct user_struct user;
 
